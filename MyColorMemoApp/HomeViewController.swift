@@ -11,20 +11,36 @@ import UIKit // UIに関するクラスが格納されたモジュール
 // HomeViewControllerにUIViewControllerを「クラス継承」する
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    var memoDataList: [MemoDataModel] = []
+    
     override func viewDidLoad() {
         // このクラスの画面が表示される際に呼び出されるメソッド
         // 画面の表示・非表示に応じて実行されるメソッドを「ライフサイクルメソッド」と呼ぶ
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        setMemoData()
+    }
+    
+    func setMemoData() {
+        for i in 1...5 {
+            let memoDataModel = MemoDataModel(text: "このメモは\(i)番目のメモです。", recordDate: Date())
+            memoDataList.append(memoDataModel)
+        }
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return memoDataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        // indexPath.row→UItableViewに表示されるCellの(0から始まる)通り番号が順番に渡される
+        let memoDataModel: MemoDataModel = memoDataList[indexPath.row]
+        cell.textLabel?.text = memoDataModel.text
+        cell.detailTextLabel?.text = "\(memoDataModel.recordDate)"
+        return cell
     }
 }
