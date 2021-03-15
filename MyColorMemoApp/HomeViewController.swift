@@ -50,6 +50,8 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboad = UIStoryboard(name: "Main", bundle: nil)
         let memoDetailViewController = storyboad.instantiateViewController(identifier: "MemoDetailViewController") as! MemoDetailViewController
+        let memoData = memoDataList[indexPath.row]
+        memoDetailViewController.configure(memo: memoData)
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(memoDetailViewController, animated: true)
     }
