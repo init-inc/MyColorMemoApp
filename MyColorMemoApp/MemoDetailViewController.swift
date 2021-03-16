@@ -22,6 +22,7 @@ class MemoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayData()
+        setDoneButton()
     }
     
     func configure(memo: MemoDataModel) {
@@ -32,5 +33,16 @@ class MemoDetailViewController: UIViewController {
     func displayData() {
         textView.text = text
         navigationItem.title = dateFormat.string(from: recordDate)
+    }
+    
+    @objc func tapDoneButton() {
+        view.endEditing(true)
+    }
+    
+    func setDoneButton() {
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+        let commitButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
+        toolBar.items = [commitButton]
+        textView.inputAccessoryView = toolBar
     }
 }
