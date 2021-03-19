@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit // UIに関するクラスが格納されたモジュール
+import RealmSwift
 
 // HomeViewControllerにUIViewControllerを「クラス継承」する
 class HomeViewController: UIViewController {
@@ -20,17 +21,19 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        setMemoData()
         setNavigationBarButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setMemoData()
+        tableView.reloadData()
+    }
+    
     func setMemoData() {
-        for i in 1...5 {
-            let memoDataModel = MemoDataModel()
-            memoDataModel.text = "このメモは\(i)番目のメモです。"
-            memoDataModel.recordDate = Date()
-            memoDataList.append(memoDataModel)
-        }
+        let realm = try! Realm()
+        let result = realm.objects(MemoDataModel.self)
+        memoDataList = Array(result)
     }
     
     @objc func tapAddButton() {
