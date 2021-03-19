@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         setNavigationBarButton()
+        setLeftNavigationBarButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,34 @@ class HomeViewController: UIViewController {
         let buttonActionSelector: Selector = #selector(tapAddButton)
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: buttonActionSelector)
         navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func setLeftNavigationBarButton() {
+        let buttonActionSelector: Selector = #selector(didTapColorSettingButton)
+        let leftButtonImage = UIImage(named: "colorSettingIcon")
+        let leftButton = UIBarButtonItem(image: leftButtonImage, style: .plain, target: self, action: buttonActionSelector)
+        navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    @objc func didTapColorSettingButton() {
+        let defaultAction = UIAlertAction(title: "デフォルト", style: .default, handler: { _ -> Void in
+            print("デフォルトがタップされました！")
+        })
+        let orangeAction = UIAlertAction(title: "オレンジ", style: .default, handler: { _ -> Void in
+            print("オレンジがタップされました！")
+        })
+        let redAction = UIAlertAction(title: "レッド", style: .default, handler: { _ -> Void in
+            print("レッドがタップされました！")
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "テーマカラーを選択してください", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(defaultAction)
+        alert.addAction(orangeAction)
+        alert.addAction(redAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
 }
 
