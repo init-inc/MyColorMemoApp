@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		3B04B51125EF129700476D31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04B51025EF129700476D31 /* HomeViewController.swift */; };
 		3B1746CC25FE3C9F0081374D /* MemoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1746CB25FE3C9F0081374D /* MemoDataModel.swift */; };
 		3B1746D125FEE50B0081374D /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1746D025FEE50B0081374D /* MemoDetailViewController.swift */; };
+		3BCAB37A2608107100118AC0 /* MyColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCAB3792608107100118AC0 /* MyColorType.swift */; };
 		3BFDFE1425EDD0A5002D65DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFE1325EDD0A5002D65DE /* AppDelegate.swift */; };
 		3BFDFE1625EDD0A5002D65DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFDFE1525EDD0A5002D65DE /* SceneDelegate.swift */; };
 		3BFDFE1B25EDD0A5002D65DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BFDFE1925EDD0A5002D65DE /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		3B04B51025EF129700476D31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3B1746CB25FE3C9F0081374D /* MemoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDataModel.swift; sourceTree = "<group>"; };
 		3B1746D025FEE50B0081374D /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
+		3BCAB3792608107100118AC0 /* MyColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColorType.swift; sourceTree = "<group>"; };
 		3BFDFE1025EDD0A5002D65DE /* MyColorMemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyColorMemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFDFE1325EDD0A5002D65DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BFDFE1525EDD0A5002D65DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				3B04B51025EF129700476D31 /* HomeViewController.swift */,
 				3B1746CB25FE3C9F0081374D /* MemoDataModel.swift */,
 				3B1746D025FEE50B0081374D /* MemoDetailViewController.swift */,
+				3BCAB3792608107100118AC0 /* MyColorType.swift */,
 			);
 			path = MyColorMemoApp;
 			sourceTree = "<group>";
@@ -161,7 +164,6 @@
 				9F82D8271E1F3B6FF86248B5 /* Pods-MyColorMemoAppTests.debug.xcconfig */,
 				17D7C39415F0AD617B25548C /* Pods-MyColorMemoAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -418,6 +420,7 @@
 				3BFDFE1625EDD0A5002D65DE /* SceneDelegate.swift in Sources */,
 				3B04B51125EF129700476D31 /* HomeViewController.swift in Sources */,
 				3B1746CC25FE3C9F0081374D /* MemoDataModel.swift in Sources */,
+				3BCAB37A2608107100118AC0 /* MyColorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
