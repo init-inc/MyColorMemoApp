@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var memoDataList: [MemoDataModel] = []
+    let themeColorTypeKey = "themeColorTypeKey"
     
     override func viewDidLoad() {
         // このクラスの画面が表示される際に呼び出されるメソッド
@@ -23,7 +24,9 @@ class HomeViewController: UIViewController {
         tableView.tableFooterView = UIView()
         setNavigationBarButton()
         setLeftNavigationBarButton()
-        setThemeColor(type: .default)
+        let themeColorTypeInt = UserDefaults.standard.integer(forKey: themeColorTypeKey)
+        let themeColorType = MyColorType(rawValue: themeColorTypeInt) ?? .default
+        setThemeColor(type: themeColorType)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +104,11 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = type.color
         // Dictionary型→[Key: Value]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
+        saveThemeColor(type: type)
+    }
+    
+    func saveThemeColor(type: MyColorType) {
+        UserDefaults.standard.setValue(type.rawValue, forKey: themeColorTypeKey)
     }
 }
 
