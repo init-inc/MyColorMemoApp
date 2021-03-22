@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
         tableView.tableFooterView = UIView()
         setNavigationBarButton()
         setLeftNavigationBarButton()
+        setThemeColor(type: .default)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,13 +59,25 @@ class HomeViewController: UIViewController {
     
     @objc func didTapColorSettingButton() {
         let defaultAction = UIAlertAction(title: "デフォルト", style: .default, handler: { _ -> Void in
-            print("デフォルトがタップされました！")
+            self.setThemeColor(type: .default)
         })
         let orangeAction = UIAlertAction(title: "オレンジ", style: .default, handler: { _ -> Void in
-            print("オレンジがタップされました！")
+            self.setThemeColor(type: .orange)
         })
         let redAction = UIAlertAction(title: "レッド", style: .default, handler: { _ -> Void in
-            print("レッドがタップされました！")
+            self.setThemeColor(type: .red)
+        })
+        let blueAction = UIAlertAction(title: "ブルー", style: .default, handler: { _ -> Void in
+            self.setThemeColor(type: .blue)
+        })
+        let pinkAction = UIAlertAction(title: "ピンク", style: .default, handler: { _ -> Void in
+            self.setThemeColor(type: .pink)
+        })
+        let greenAction = UIAlertAction(title: "グリーン", style: .default, handler: { _ -> Void in
+            self.setThemeColor(type: .green)
+        })
+        let purpleAction = UIAlertAction(title: "パープル", style: .default, handler: { _ -> Void in
+            self.setThemeColor(type: .purple)
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         let alert = UIAlertController(title: "テーマカラーを選択してください", message: "", preferredStyle: .actionSheet)
@@ -73,8 +86,21 @@ class HomeViewController: UIViewController {
         alert.addAction(orangeAction)
         alert.addAction(redAction)
         alert.addAction(cancelAction)
+        alert.addAction(blueAction)
+        alert.addAction(pinkAction)
+        alert.addAction(greenAction)
+        alert.addAction(purpleAction)
         
         present(alert, animated: true)
+    }
+    
+    func setThemeColor(type: MyColorType) {
+        let isDefault = type == .default
+        let tintColor: UIColor = isDefault ? .black : .white
+        navigationController?.navigationBar.tintColor = tintColor
+        navigationController?.navigationBar.barTintColor = type.color
+        // Dictionary型→[Key: Value]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
     }
 }
 
