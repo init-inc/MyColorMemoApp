@@ -595,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A40C86B860D7B0006B30624A /* Pods-MyColorMemoApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -616,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69EBA97BB677F49A81D4DB44 /* Pods-MyColorMemoApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,7 +639,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F82D8271E1F3B6FF86248B5 /* Pods-MyColorMemoAppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JEHPP3L74;
@@ -660,7 +662,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17D7C39415F0AD617B25548C /* Pods-MyColorMemoAppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JEHPP3L74;
@@ -683,7 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBCE982FA7FB0E9F8ACBD275 /* Pods-MyColorMemoApp-MyColorMemoAppUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JEHPP3L74;
 				INFOPLIST_FILE = MyColorMemoAppUITests/Info.plist;
@@ -705,7 +707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B08DB6C2179BFCF9ABED3076 /* Pods-MyColorMemoApp-MyColorMemoAppUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8JEHPP3L74;
 				INFOPLIST_FILE = MyColorMemoAppUITests/Info.plist;
