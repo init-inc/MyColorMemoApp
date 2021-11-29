@@ -101,7 +101,11 @@ class HomeViewController: UIViewController {
         let isDefault = type == .default
         let tintColor: UIColor = isDefault ? .black : .white
         navigationController?.navigationBar.tintColor = tintColor
-        navigationController?.navigationBar.barTintColor = type.color
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = type.color
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         // Dictionary型→[Key: Value]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: tintColor]
         saveThemeColor(type: type)
