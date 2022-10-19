@@ -127,7 +127,7 @@ extension HomeViewController: UITableViewDataSource {
         let memoDataModel: MemoDataModel = memoDataList[indexPath.row]
         cell.textLabel?.text = memoDataModel.text
         cell.detailTextLabel?.text = "\(memoDataModel.recordDate)"
-        return cell
+        return cell // TEST
     }
 }
 
